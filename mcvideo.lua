@@ -2,7 +2,7 @@
 -- script-name : mcvideo.lua
 -- author : Mr_Xu (xuchenbjtu@gmail.com)
 -- MCVideo Wireshark Dissector 
--- A wireshark dissector for MCVideo transmission control modified from Nemergent's MCPTT wireshark dissector.
+-- A wireshark dissector for MCVideo transmission control and MCData protocol modified from Nemergent's MCPTT wireshark dissector.
 -- date : 20171230
 ----------------------------------------
 
@@ -1328,7 +1328,7 @@ DissectorTable.get("media_type"):add("application/vnd.3gpp.mcptt.user-profile+xm
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcptt-service-config+xml", Dissector.get("xml"))
 
 
--- we add all new MIME types of MCPTT protocol to the XML dissector
+-- we add all new MIME types of MCVideo protocol to the XML dissector
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-info+xml", Dissector.get("xml"))
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-mbms-usage-info+xml", Dissector.get("xml"))
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-location-info+xml", Dissector.get("xml"))
@@ -1339,3 +1339,10 @@ DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-ue-init-confi
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-ue-config+xml", Dissector.get("xml"))
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo.user-profile+xml", Dissector.get("xml"))
 DissectorTable.get("media_type"):add("application/vnd.3gpp.mcvideo-service-config+xml", Dissector.get("xml"))
+
+
+-- we add all new MIME types of MCVideo protocol to the XML dissector
+DissectorTable.get("media_type"):add("application/resource-lists+xml", Dissector.get("xml"))
+DissectorTable.get("media_type"):add("application/vnd.3gpp.mcdata-info+xml", Dissector.get("xml"))
+DissectorTable.get("media_type"):add("application/vnd.3gpp.mcdata-signalling", Dissector.get("xml"))
+DissectorTable.get("media_type"):add("application/vnd.3gpp.mcdata-payload", Dissector.get("xml"))
